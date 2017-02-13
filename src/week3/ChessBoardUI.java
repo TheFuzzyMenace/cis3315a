@@ -27,11 +27,13 @@ public class ChessBoardUI {
             while (true) {
                 System.out.println("Would you like to move or quit?");
                 System.out.println("Press 1 to play. Press 2 to quit. ");
-                String choice = sc.nextLine();
+                String choice = sc.next();
                 if (choice.equals("1")) {
                     break;
                 } else if (choice.equals("2")) {
+                    System.out.println("_________________________________________________________________________\n");
                     System.out.println("\nThere's No Shame In Admitting Defeat.\n");
+                    System.out.println("_________________________________________________________________________\n");
                     break outterLoop;
                 } else{
                     System.out.println("Invalid Selection. Press only 1 or 2.");
@@ -48,6 +50,7 @@ public class ChessBoardUI {
             myBoard.move(rowFrom, colFrom, rowTo, colTo);
             System.out.println("\n");
             System.out.println(myBoard);
+            System.out.println("_________________________________________________________________________\n");
             count++;
 
         }
