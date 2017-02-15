@@ -157,7 +157,7 @@ class Faculty extends Employee {
 
     @Override
     public String toString() {
-        return "Faculty{" + "officeHours=" + officeHours + ", rank=" + rank + '}';
+        return "Faculty " + getName();
     }
     
     
@@ -184,7 +184,14 @@ class Staff extends Employee{
 
     @Override
     public String toString() {
-        return "Staff{" + "title=" + title + '}';
+        return "Staff " + getName();
     }
     
+}
+
+class C11N2Test{
+    public static void main(String[] args) {
+        C11N2Person p1 = new C11N2Person("Joe", "123 Main", "123-4567", "test@ex.com");
+        System.out.println("p1 = " + p1);
+    }
 }
