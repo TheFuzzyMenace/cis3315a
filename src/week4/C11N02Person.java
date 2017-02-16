@@ -9,17 +9,17 @@ import java.time.LocalDate;
  *
  * @author Jeremiah Zellers
  */
-public class C11N2Person {
+public class C11N02Person {
 
     private String name;
     private String address;
     private String phone;
     private String email;
 
-    public C11N2Person() {
+    public C11N02Person() {
     }
 
-    public C11N2Person(String name, String address, String phone, String email) {
+    public C11N02Person(String name, String address, String phone, String email) {
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -66,7 +66,7 @@ public class C11N2Person {
 }
                 // This is the Studet Class
 
-class Student extends C11N2Person {
+class Student extends C11N02Person {
 //set final (makes it a constant) and your instance variable
 
     final String status;
@@ -78,7 +78,7 @@ class Student extends C11N2Person {
 }
 
                                     //This is the Employee class..
-class Employee extends C11N2Person {
+class Employee extends C11N02Person {
 
     private String office;
     private double salary;
@@ -191,7 +191,7 @@ class Staff extends Employee{
 
 class C11N2Test{
     public static void main(String[] args) {
-        C11N2Person p1 = new C11N2Person("Joe", "123 Main", "123-4567", "test@ex.com");
+        C11N02Person p1 = new C11N02Person("Joe", "123 Main", "123-4567", "test@ex.com");
         System.out.println("p1 = " + p1);
     }
 }
