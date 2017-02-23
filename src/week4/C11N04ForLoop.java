@@ -26,6 +26,9 @@ public class C11N04ForLoop {
         System.out.print("How many numbers would you like to enter:  ");
         int choice = sc.nextInt();
         int count = 1;
+        if(choice == 0){
+            System.out.println("null");
+        }else{
         System.out.println("Enter 5 numbers:");
         for(int i = 0; i < choice; i++){
             System.out.print("Number " + count + ":  ");
@@ -33,6 +36,7 @@ public class C11N04ForLoop {
             count++;
         }
         System.out.println("The minimum number is: " + C11N04ForLoop.min(userInput));
+        }
     }
     
 }
