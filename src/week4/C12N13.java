@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class C12N13 {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        PrintWriter writer = new PrintWriter("C12N13.txt", "UTF-8");
+        PrintWriter writer = new PrintWriter("C12N13.txt");
         writer.println("These Are Word. I am saying words. I will count these words.");
         writer.close();
         
