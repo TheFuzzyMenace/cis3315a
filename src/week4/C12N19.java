@@ -18,9 +18,9 @@ public class C12N19 {
             java.net.URL url = new java.net.URL(
                     "http://cs.armstrong.edu/liang/data/Lincoln.txt");
             int count = 0;
-            Scanner input = new Scanner(url.openStream());
-            while (input.hasNext()) {
-                if (Character.isLetter((input.next()).charAt(0))) {
+            Scanner sc = new Scanner(url.openStream());
+            while (sc.hasNext()) {
+                if (Character.isLetter((sc.next()).charAt(0))) {
                     count++;
                 }
             }

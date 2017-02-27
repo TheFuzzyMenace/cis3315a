@@ -27,15 +27,16 @@ public class C12N15 {
         try (
                 PrintWriter output = new PrintWriter(file);) {
             for (int i = 0; i < 100; i++) {
-                output.print(((int) (Math.random() * 500) + 1));
-                output.print(" ");
+                output.print(((int) (Math.random() * 500) + 1) + " ");
+
             }
-        }
+            output.close();
+        }        
         ArrayList<Integer> list = new ArrayList<>();
         try (
-                Scanner input = new Scanner(file);) {
-            while (input.hasNext()) {
-                list.add(input.nextInt());
+                Scanner sc = new Scanner(file);) {
+            while (sc.hasNext()) {
+                list.add(sc.nextInt());
             }
         }
         Collections.sort(list);

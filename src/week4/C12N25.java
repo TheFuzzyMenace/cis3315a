@@ -23,9 +23,9 @@ public class C12N25 {
         // Read data from url
         try {
             java.net.URL url = new java.net.URL("http://cs.armstrong.edu/liang/data/Salary.txt");
-            Scanner input = new Scanner(url.openStream());
-            while (input.hasNext()) {
-                String[] line = (input.nextLine()).split(" ");
+            Scanner sc = new Scanner(url.openStream());
+            while (sc.hasNext()) {
+                String[] line = (sc.nextLine()).split(" ");
                 processData(assistant, associate, full, line[2],
                         new Double(line[3]));
             }

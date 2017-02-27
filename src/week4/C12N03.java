@@ -18,7 +18,7 @@ public class C12N03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        int[] randomArr = new int[121];
+        int[] randomArr = new int[120];
 
         boolean oob = true;
         while (oob) {

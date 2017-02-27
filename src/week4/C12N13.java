@@ -5,7 +5,12 @@
  */
 package week4;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,42 +19,64 @@ import java.util.Scanner;
  */
 public class C12N13 {
 
-    public static void main(String[] args) throws Exception {
-        if (args.length != 1) {
-            System.out.println("Usage: java filename");
-            System.exit(1);
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        PrintWriter writer = new PrintWriter("C12N13.txt", "UTF-8");
+        writer.println("These Are Word. I am saying words. I will count these words.");
+        writer.close();
+        
+        System.out.println("The number of words is: " + C12N13.countWords());
+        System.out.println("The number of lines is: " + C12N13.countLines());
+        System.out.println("The number of chars is: " + C12N13.countChars());
+
+    }
+
+    public static int countWords() throws FileNotFoundException, IOException {
+
+        FileReader fr = new FileReader("C12N13.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        String words = br.readLine();
+        int wordCount = 0;
+        while (words != null) {
+            String[] parts = words.split(" ");
+            for (String w : parts) {
+                wordCount++;
+            }
+            words = br.readLine();
+        }
+        return wordCount;
+
+    }
+
+    public static int countLines() throws FileNotFoundException, IOException {
+        FileReader fr2 = new FileReader("C12N13.txt");
+        BufferedReader br2 = new BufferedReader(fr2);
+        String lines = br2.readLine();
+        int lineCount = 0;
+        while (lines != null) {
+            String[] parts2 = lines.split("\\.");
+            for (String w : parts2) {
+                lineCount++;
+            }
+            lines = br2.readLine();
         }
 
-        File file = new File(args[0]);
-        if (!file.exists()) {
-            System.out.println("File " + args[0] + " does not exist");
-            System.exit(2);
-        }
+        return lineCount;
 
-        int characters = 0;
-        int words = 0;
-        int lines = 0;
+    }
 
-        try (
-                Scanner input = new Scanner(file);) {
-            while (input.hasNext()) {
-                lines++;
-                String line = input.nextLine();
-                characters += line.length();
+    public static int countChars() throws FileNotFoundException, IOException {
+        FileReader fr3 = new FileReader("C12N13.txt");
+        BufferedReader br3 = new BufferedReader(fr3);
+        String chars = br3.readLine();
+        int charCount = 0;
+        for (int i = 0; i < chars.length(); i++) {
+
+            if (chars.toLowerCase().charAt(i) >= 'a' && chars.toLowerCase().charAt(i) <= 'z') {
+                charCount++;
             }
         }
 
-        try (
-                Scanner input = new Scanner(file);) {
-            while (input.hasNext()) {
-                String line = input.next();
-                words++;
-            }
-        }
-
-        System.out.println("File " + file.getName() + " has");
-        System.out.println(characters + " characters");
-        System.out.println(words + " words");
-        System.out.println(lines + " lines");
+        return charCount;
     }
 }
